@@ -1,0 +1,11 @@
+version: "1.0"
+globalTimeout: 900
+testSuiteTimeout: 900
+concurrency: 1
+retryOnFailure: true
+
+pre:
+  - pip install -r requirements.txt
+
+run:
+  - python -m pytest tests/ -v --capture=tee-sys
